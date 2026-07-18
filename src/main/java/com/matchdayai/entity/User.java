@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.matchdayai.enums.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +28,7 @@ public class User {
 
     private String password;
 
-    private String role;
+    private Role role;
 
     private String phone;
 
@@ -35,5 +37,14 @@ public class User {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+    public Role getRole() {
+        return role;
+        }
+
+    public void setRole(Role role) {
+        this.role = role;
+}
+
 
 }

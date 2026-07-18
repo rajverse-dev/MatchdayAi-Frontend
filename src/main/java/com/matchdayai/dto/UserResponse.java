@@ -1,7 +1,7 @@
 package com.matchdayai.dto;
 
 import java.time.LocalDateTime;
-
+import com.matchdayai.enums.Role;
 import lombok.Builder;
 import lombok.Data;
 
@@ -15,7 +15,7 @@ public class UserResponse {
     
     private String email;
 
-    private String role;
+    private Role role;
 
     private String phone;
 
