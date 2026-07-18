@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-950 text-navy-100 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-navy-900/60 backdrop-blur-md border border-white/5;
+  }
+
+  .glass-card {
+    @apply bg-navy-900/50 backdrop-blur-md border border-white/5 rounded-2xl;
+  }
+
+  .glass-strong {
+    @apply bg-navy-900/80 backdrop-blur-xl border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    background: radial-gradient(ellipse at top, rgba(47, 123, 255, 0.12), transparent 60%),
+                radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.08), transparent 50%),
+                #0a1129;
+  }
+
+  .stat-glow {
+    box-shadow: 0 0 24px -8px rgba(47, 123, 255, 0.4);
+  }
+
+  .pitch-grid {
+    background-image:
+      linear-gradient(rgba(47, 123, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47, 123, 255, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background: #0f1a3a !important;
+  border-radius: 1rem;
+}
+.leaflet-tile {
+  filter: invert(0.92) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.7);
+}
+.leaflet-control-attribution {
+  display: none !important;
+}
