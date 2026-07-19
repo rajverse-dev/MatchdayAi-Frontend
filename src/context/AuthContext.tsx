@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import {
   createContext,
   useContext,
@@ -44,6 +45,12 @@ function normalizeRole(role: string | null | undefined) {
   return `ROLE_${cleaned}`;
 }
 
+/**
+ * Authentication Provider component that wraps the application.
+ * Manages user session, JWT tokens, and role-based access.
+ *
+ * @param children - The child components to render within the provider
+ */
 export function AuthProvider({
   children,
 }: {
@@ -127,7 +134,7 @@ export function AuthProvider({
 
     localStorage.setItem(
       "matchday_role",
-      role
+      role || ""
     );
 
     localStorage.setItem(
@@ -208,6 +215,13 @@ export function AuthProvider({
   );
 }
 
+/**
+ * Custom hook to access authentication context.
+ * Must be used within an AuthProvider.
+ *
+ * @returns AuthContextValue containing user data and auth methods
+ * @throws Error if used outside of AuthProvider
+ */
 export function useAuth() {
 
   const context = useContext(AuthContext);

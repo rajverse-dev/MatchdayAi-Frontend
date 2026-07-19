@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -7,11 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node modules
 node_modules
 dist
 dist-ssr
 *.local
 
+# Editor configs
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -21,39 +23,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
 .env
-=======
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
->>>>>>> a75e293595c7b40cc8ca238809286f6fae55e570
+.env.local
+.env.production
+.env.development

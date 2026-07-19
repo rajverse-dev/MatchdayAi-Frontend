@@ -15,9 +15,9 @@ const features = [
 
 export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
   return (
-    <div className="min-h-screen gradient-bg flex">
+    <main className="min-h-screen gradient-bg flex">
       {/* Left panel - branding */}
-      <div className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 pitch-grid relative overflow-hidden">
+      <section aria-label="Branding" className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 pitch-grid relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-success-500/10 rounded-full blur-3xl" />
 
@@ -63,10 +63,10 @@ export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
         <div className="relative text-xs text-navy-500">
           &copy; 2026 MatchDay AI. All rights reserved.
         </div>
-      </div>
+      </section>
 
       {/* Right panel - form */}
-      <div className="flex-1 flex items-center justify-center p-6 lg:p-12">
+      <section aria-label="Authentication Form" className="flex-1 flex items-center justify-center p-6 lg:p-12">
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
@@ -86,7 +86,7 @@ export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
 
           {children}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

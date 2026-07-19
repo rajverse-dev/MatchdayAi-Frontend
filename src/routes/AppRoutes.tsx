@@ -1,17 +1,19 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { FullPageSpinner } from "../components/common/Spinner";
 
 import { AppLayout } from "../components/layout";
 
 import { LoginPage } from "../pages/Login/LoginPage";
 import { RegisterPage } from "../pages/Register/RegisterPage";
 
-import { DashboardPage } from "../pages/Dashboard/DashboardPage";
-import { AIChatPage } from "../pages/AIChat/AIChatPage";
-import { NavigationPage } from "../pages/Navigation/NavigationPage";
-import { QueuePage } from "../pages/Queue/QueuePage";
-import { CrowdPage } from "../pages/Crowd/CrowdPage";
-import { EmergencyPage } from "../pages/Emergency/EmergencyPage";
-import { TransportPage } from "../pages/Transport/TransportPage";
+const DashboardPage = lazy(() => import("../pages/Dashboard/DashboardPage").then(m => ({ default: m.DashboardPage })));
+const AIChatPage = lazy(() => import("../pages/AIChat/AIChatPage").then(m => ({ default: m.AIChatPage })));
+const NavigationPage = lazy(() => import("../pages/Navigation/NavigationPage").then(m => ({ default: m.NavigationPage })));
+const QueuePage = lazy(() => import("../pages/Queue/QueuePage").then(m => ({ default: m.QueuePage })));
+const CrowdPage = lazy(() => import("../pages/Crowd/CrowdPage").then(m => ({ default: m.CrowdPage })));
+const EmergencyPage = lazy(() => import("../pages/Emergency/EmergencyPage").then(m => ({ default: m.EmergencyPage })));
+const TransportPage = lazy(() => import("../pages/Transport/TransportPage").then(m => ({ default: m.TransportPage })));
 import { OperationsPage } from "../pages/Admin/OperationsPage";
 import { ProfilePage } from "../pages/Profile/ProfilePage";
 import { SettingsPage } from "../pages/Settings/SettingsPage";
@@ -22,7 +24,8 @@ import Unauthorized from "../pages/Unauthorized";
 
 export function AppRoutes() {
   return (
-    <Routes>
+    <Suspense fallback={<FullPageSpinner />}>
+      <Routes>
 
       {/* Public Routes */}
 
@@ -229,6 +232,7 @@ export function AppRoutes() {
         element={<NotFoundPage />}
       />
 
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 }

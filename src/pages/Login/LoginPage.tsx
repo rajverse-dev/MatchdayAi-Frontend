@@ -51,7 +51,7 @@ export function LoginPage() {
 
     }
 
-  } catch (error) {
+  } catch {
 
     setError("Invalid email or password");
 
@@ -104,10 +104,11 @@ export function LoginPage() {
             />
             <button
               type="button"
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
               onClick={() => setShowPassword((v) => !v)}
               className="absolute right-3.5 top-1/2 -translate-y-1/2 text-navy-400 hover:text-white"
             >
-              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              {showPassword ? <EyeOff size={18} aria-hidden="true" /> : <Eye size={18} aria-hidden="true" />}
             </button>
           </div>
         </div>
