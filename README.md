@@ -1,5 +1,7 @@
 # StadiumAI Frontend
 
+> **Backend Repository:** The Spring Boot backend for this project can be found here: [https://github.com/rajverse-dev/Stadium-backend](https://github.com/rajverse-dev/Stadium-backend)
+
 This is a React frontend powered by Vite, deployed on Vercel.
 
 ## Vercel Deployment Instructions
