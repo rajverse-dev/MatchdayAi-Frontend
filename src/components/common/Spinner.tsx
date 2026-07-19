@@ -9,7 +9,7 @@ const sizeMap = {
   lg: 'h-12 w-12 border-3',
 };
 
-export function Spinner({ size = 'md', className = '' }: SpinnerProps) {
+export const Spinner = memo(function Spinner({ size = 'md', className = '' }: SpinnerProps) {
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <div

@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { type ButtonHTMLAttributes, type ReactNode, memo } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' | 'outline';
 type Size = 'sm' | 'md' | 'lg' | 'icon';
@@ -30,7 +30,7 @@ const sizeClasses: Record<Size, string> = {
   icon: 'p-2.5 rounded-lg',
 };
 
-export function Button({
+export const Button = memo(function Button({
   variant = 'primary',
   size = 'md',
   loading = false,
@@ -57,4 +57,4 @@ export function Button({
       {!loading && rightIcon}
     </button>
   );
-}
+});
